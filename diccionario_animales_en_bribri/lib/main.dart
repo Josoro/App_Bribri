@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diccionario de los Bribris',
-      initialRoute: 'animal_cards',
+      initialRoute: 'animal_information',
       routes: {
         'home': (_) => const HomeScreen(),
         'animal_cards': (_) => const AnimalCardsScreen(),
