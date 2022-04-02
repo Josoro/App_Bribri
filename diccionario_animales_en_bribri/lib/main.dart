@@ -11,14 +11,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diccionario de los Bribris',
-      initialRoute: 'animal_information',
+      initialRoute: 'animal_cards',
       routes: {
         'home': (_) => const HomeScreen(),
         'animal_cards': (_) => const AnimalCardsScreen(),
         'animal_information': (_) => const AnimalInformationScreen(),
       },
       //Tema principal de la app/appBar.
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
           appBarTheme:
               const AppBarTheme(color: Color.fromARGB(255, 44, 170, 187))),
     );
