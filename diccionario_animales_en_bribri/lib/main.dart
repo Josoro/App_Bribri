@@ -1,7 +1,12 @@
 import 'package:diccionario_animales_en_bribri/screens/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:admob_flutter/admob_flutter.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Admob.initialize();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -11,16 +16,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diccionario de los Bribris',
-      initialRoute: 'animal_cards',
+      initialRoute: 'home',
       routes: {
         'home': (_) => const HomeScreen(),
         'animal_cards': (_) => const AnimalCardsScreen(),
         'animal_information': (_) => const AnimalInformationScreen(),
       },
       //Tema principal de la app/appBar.
-      theme: ThemeData.light().copyWith(
-          appBarTheme:
-              const AppBarTheme(color: Color.fromARGB(255, 44, 170, 187))),
+      theme: ThemeData(fontFamily: 'Bongalo'),
     );
   }
 }

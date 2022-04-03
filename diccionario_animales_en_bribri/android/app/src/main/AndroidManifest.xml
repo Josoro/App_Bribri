@@ -4,6 +4,11 @@
         android:label="diccionario_animales_en_bribri"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5501758105685692~5006993488"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,5 +35,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11a2273d8805d3ef6144887a15d77bde670781b3
     </application>
 </manifest>
