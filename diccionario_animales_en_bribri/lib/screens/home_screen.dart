@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                     height: 40.0,
                     onPressed: () =>
                         Navigator.pushNamed(context, 'animal_cards'),
-                    color: Color.fromARGB(255, 0, 162, 135),
+                    color: const Color.fromARGB(255, 0, 162, 135),
                     child: const Text('Ver',
                         style: TextStyle(
                             fontFamily: 'Bongalo',
@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                     height: 40.0,
                     onPressed: () =>
                         Navigator.pushNamed(context, 'animal_cards'),
-                    color: Color.fromARGB(255, 0, 162, 135),
+                    color: const Color.fromARGB(255, 0, 162, 135),
                     child: const Text('Información',
                         style: TextStyle(
                             fontFamily: 'Bongalo',
@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 60,
         child: Center(
           child: AdmobBanner(
