@@ -8,23 +8,27 @@ class AnimalCardsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Animales en Bribri'),
-        centerTitle: true,
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search_outlined),
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: Column(
-        children: const [
-          CardSwiper()
-          //Listado horizontal de los animales.
-        ],
-      ),
-    );
+        drawer: const Drawer(
+          child: NavBar(),
+        ),
+        appBar: AppBar(
+          title: const Text('Animales en Bribri'),
+          centerTitle: true,
+          elevation: 0,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.search_outlined),
+              onPressed: () {},
+            )
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(children: const [
+            //Tarjetas principales de los animales
+            CardSwiper(),
+            //Listado horizontal de los animales.
+            AnimalSlider()
+          ]),
+        ));
   }
 }
