@@ -13,7 +13,12 @@ class AnimalInformationScreen extends StatelessWidget {
         SliverList(
             delegate: SliverChildListDelegate.fixed([
           _PosterAndTitle(),
-          _Overview(description: 'Hola'),
+          const SizedBox(
+            height: 10,
+          ),
+          _Overview(
+              description:
+                  'Ex sit veniam officia id commodo aute deserunt cillum. Ex aliqua proident excepteur amet nisi ad mollit magna et aliquip consectetur. Qui consectetur nisi laborum anim Lorem cillum est qui minim id ut. Esse Lorem duis dolor tempor irure ullamco do non nulla ad exercitation. Et est commodo nostrud incididunt.'),
         ]))
       ],
     ));
@@ -38,7 +43,7 @@ class _CustomAppBar extends StatelessWidget {
           color: Colors.black12,
           padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
           child: Text(
-            "Nombre",
+            "tkabë̀",
             style: TextStyle(fontSize: 16),
             textAlign: TextAlign.center,
           ),
@@ -84,16 +89,13 @@ class _PosterAndTitle extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(
+                  height: 10,
+                ),
                 Text('sulì tkabë - suli tchabë',
                     style: textTheme.headline5,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2),
-                Text(
-                  'Title2',
-                  style: textTheme.subtitle1,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                ),
               ],
             ),
           )

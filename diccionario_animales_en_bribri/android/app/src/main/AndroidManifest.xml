@@ -35,11 +35,5 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-<<<<<<< Updated upstream
-=======
-
-
-
->>>>>>> Stashed changes
     </application>
 </manifest>
