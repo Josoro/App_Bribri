@@ -24,7 +24,8 @@ class CardSwiper extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: const FadeInImage(
                   placeholder: AssetImage('assets/no-image.jpg'),
-                  image: NetworkImage('https://via.placeholder.com/300x400'),
+                  image: NetworkImage(
+                      'https://firebasestorage.googleapis.com/v0/b/diccionario-animales-en-bribri.appspot.com/o/prueba.png?alt=media&token=142d5c3a-bf45-4a37-8a2e-e34c1f596ecc'),
                   fit: BoxFit.cover),
             ),
           );
