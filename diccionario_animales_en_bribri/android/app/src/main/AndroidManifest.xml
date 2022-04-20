@@ -4,7 +4,8 @@
         android:label="Animales en Bribri"
         android:name="${applicationName}"
         android:icon="@mipmap/icon">
-
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyD9_jEQOUj6iAu8qkmLP44Tyns1NiKhuBM"/>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5501758105685692~5006993488"/>

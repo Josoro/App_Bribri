@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   card_swiper: ^2.0.3
   admob_flutter: ^2.0.0
+  google_maps_flutter: ^2.1.3
 
 dev_dependencies:
   flutter_test:

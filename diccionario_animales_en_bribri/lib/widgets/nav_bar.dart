@@ -42,7 +42,9 @@ class NavBar extends StatelessWidget {
         title: const Text('Tema'),
       ),
       ListTile(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, 'animal_information');
+        },
         leading: const Icon(
           Icons.info_rounded,
           color: Color.fromARGB(255, 35, 138, 151),
@@ -50,20 +52,14 @@ class NavBar extends StatelessWidget {
         title: const Text('Información de los bribris'),
       ),
       ListTile(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, 'maps_screen');
+        },
         leading: const Icon(
           Icons.maps_home_work_rounded,
           color: Color.fromARGB(255, 35, 138, 151),
         ),
         title: const Text('Donde se ubican'),
-      ),
-      ListTile(
-        onTap: () {},
-        leading: const Icon(
-          Icons.exit_to_app_rounded,
-          color: Color.fromARGB(255, 35, 138, 151),
-        ),
-        title: const Text('Salir'),
       ),
     ]);
   }

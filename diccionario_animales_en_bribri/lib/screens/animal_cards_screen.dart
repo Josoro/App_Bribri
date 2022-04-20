@@ -12,7 +12,7 @@ class AnimalCardsScreen extends StatelessWidget {
           child: NavBar(),
         ),
         appBar: AppBar(
-          title: const Text('Animales en Bribri'),
+          title: const Text('Animales en Bribrí'),
           centerTitle: true,
           elevation: 0,
           actions: [

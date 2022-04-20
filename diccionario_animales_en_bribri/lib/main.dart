@@ -1,3 +1,4 @@
+import 'package:diccionario_animales_en_bribri/screens/maps_screen.dart';
 import 'package:diccionario_animales_en_bribri/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:admob_flutter/admob_flutter.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         'home': (_) => const HomeScreen(),
         'animal_cards': (_) => const AnimalCardsScreen(),
         'animal_information': (_) => const AnimalInformationScreen(),
+        'maps_screen': (_) => MapsScreen(),
       },
       //Tema principal de la app/appBar.
       theme: ThemeData(fontFamily: 'Bongalo'),

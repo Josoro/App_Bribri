@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             ConstrainedBox(
               constraints: BoxConstraints(maxWidth: size.width - 150),
               child: const Text(
-                'Diccionario animales en Bribri',
+                'Diccionario animales en Bribrí',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.black, fontSize: 24, fontFamily: 'Bongalo'),
@@ -30,6 +30,9 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(
+                  height: 25,
+                ),
                 Center(
                   child: MaterialButton(
                     height: 40.0,
@@ -43,22 +46,6 @@ class HomeScreen extends StatelessWidget {
                             fontSize: 28)),
                   ),
                 ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Center(
-                  child: MaterialButton(
-                    height: 40.0,
-                    onPressed: () =>
-                        Navigator.pushNamed(context, 'animal_cards'),
-                    color: const Color.fromARGB(255, 0, 162, 135),
-                    child: const Text('Información',
-                        style: TextStyle(
-                            fontFamily: 'Bongalo',
-                            color: Colors.black,
-                            fontSize: 28)),
-                  ),
-                )
               ],
             ),
           ],
