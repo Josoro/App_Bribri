@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                   child: MaterialButton(
                     height: 40.0,
                     onPressed: () =>
-                        Navigator.pushNamed(context, 'animal_cards'),
+                        Navigator.pushNamed(context, 'animal_cards_screen'),
                     color: const Color.fromARGB(255, 0, 162, 135),
                     child: const Text('Ver',
                         style: TextStyle(

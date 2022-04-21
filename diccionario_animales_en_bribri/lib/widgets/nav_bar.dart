@@ -12,10 +12,11 @@ class NavBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
-            SizedBox(height: 20.0),
+            SizedBox(height: 06.0),
             CircleAvatar(
-              radius: 50.0,
-              backgroundImage: NetworkImage(''),
+              radius: 100.0,
+              backgroundImage: AssetImage('assets/jaguar.png'),
+              backgroundColor: Colors.transparent,
             ),
             SizedBox(height: 25.0),
             Text(
@@ -34,6 +35,17 @@ class NavBar extends StatelessWidget {
         height: 40.0,
       ),
       ListTile(
+        onTap: () {
+          Navigator.pushNamed(context, 'animal_cards_screen');
+        },
+        leading: const Icon(
+          Icons.home_rounded,
+          color: Color.fromARGB(255, 35, 138, 151),
+        ),
+        title: const Text('Inicio'),
+      ),
+      const Divider(),
+      ListTile(
         onTap: () {},
         leading: const Icon(
           Icons.color_lens,
@@ -41,16 +53,16 @@ class NavBar extends StatelessWidget {
         ),
         title: const Text('Tema'),
       ),
+      const Divider(),
       ListTile(
-        onTap: () {
-          Navigator.pushNamed(context, 'animal_information');
-        },
+        onTap: () {},
         leading: const Icon(
           Icons.info_rounded,
           color: Color.fromARGB(255, 35, 138, 151),
         ),
         title: const Text('Información de los bribris'),
       ),
+      const Divider(),
       ListTile(
         onTap: () {
           Navigator.pushNamed(context, 'maps_screen');

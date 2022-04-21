@@ -6,14 +6,14 @@ class AnimalInformationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body: CustomScrollView(
       slivers: [
         _CustomAppBar(),
         SliverList(
             delegate: SliverChildListDelegate.fixed([
           _PosterAndTitle(),
-          const SizedBox(
+          SizedBox(
             height: 10,
           ),
           _Overview(
@@ -42,7 +42,7 @@ class _CustomAppBar extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           color: Colors.black12,
           padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
-          child: Text(
+          child: const Text(
             "tkabë̀",
             style: TextStyle(fontSize: 16),
             textAlign: TextAlign.center,
@@ -72,7 +72,7 @@ class _PosterAndTitle extends StatelessWidget {
             tag: '',
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: FadeInImage(
+              child: const FadeInImage(
                 placeholder: AssetImage('assets/no-image.jpg'),
                 image: NetworkImage(
                     'https://firebasestorage.googleapis.com/v0/b/diccionario-animales-en-bribri.appspot.com/o/prueba.png?alt=media&token=142d5c3a-bf45-4a37-8a2e-e34c1f596ecc'),
@@ -112,7 +112,7 @@ class _Overview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: Text(
         description,
         textAlign: TextAlign.justify,

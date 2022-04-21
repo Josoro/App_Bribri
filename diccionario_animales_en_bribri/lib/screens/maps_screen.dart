@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:diccionario_animales_en_bribri/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -7,11 +6,14 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 class MapsScreen extends StatefulWidget {
   static String id = 'maps_screen';
 
+  const MapsScreen({Key? key}) : super(key: key);
+
   @override
   State<MapsScreen> createState() => _MapsScreenState();
 }
 
 class _MapsScreenState extends State<MapsScreen> {
+  //Para que sirve esta f?
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -19,7 +21,7 @@ class _MapsScreenState extends State<MapsScreen> {
     return Scaffold(
         body: Stack(
       children: [
-        MapSample(),
+        const MapSample(),
         Positioned(
           top: 50.0,
           left: 10.0,
@@ -38,19 +40,19 @@ class _MapsScreenState extends State<MapsScreen> {
 }
 
 class MapSample extends StatefulWidget {
-  MapSample({Key? key}) : super(key: key);
+  const MapSample({Key? key}) : super(key: key);
   @override
   State<MapSample> createState() => MapSampleState();
 }
 
 class MapSampleState extends State<MapSample> {
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
   MapType _type = MapType.hybrid;
   int _typeNumber = 0;
-  Set<Marker> _markers = {};
+  final Set<Marker> _markers = {};
 
   void marcadores() {
-    _markers.add(Marker(
+    _markers.add(const Marker(
       // This marker id can be anything that uniquely identifies each marker.
       markerId: MarkerId('bribri'),
       position: LatLng(9.625434, -82.853196),
@@ -61,7 +63,7 @@ class MapSampleState extends State<MapSample> {
       icon: BitmapDescriptor.defaultMarker,
     ));
 
-    _markers.add(Marker(
+    _markers.add(const Marker(
       // This marker id can be anything that uniquely identifies each marker.
       markerId: MarkerId('salitre'),
       position: LatLng(9.190395, -83.303431),
@@ -73,12 +75,12 @@ class MapSampleState extends State<MapSample> {
     ));
   }
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
+  static const CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(9.625434, -82.853196),
     zoom: 14.4746,
   );
 
-  static final CameraPosition _kLake = CameraPosition(
+  static const CameraPosition _kLake = CameraPosition(
       //bearing: 359.8334901395799,
       target: LatLng(9.625434, -82.853196),
       //tilt: 59.440717697143555,
@@ -86,7 +88,7 @@ class MapSampleState extends State<MapSample> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       drawer: const Drawer(
         child: NavBar(),
       ),
@@ -113,8 +115,8 @@ class MapSampleState extends State<MapSample> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToTheLake,
-        label: Text('Territorio Bribri!'),
-        icon: Icon(Icons.camera_alt_outlined),
+        label: const Text('Territorio Bribri!'),
+        icon: const Icon(Icons.camera_alt_outlined),
       ),
     );
   }
