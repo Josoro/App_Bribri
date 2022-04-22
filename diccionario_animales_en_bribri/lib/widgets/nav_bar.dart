@@ -20,12 +20,12 @@ class NavBar extends StatelessWidget {
             ),
             SizedBox(height: 25.0),
             Text(
-              'Diccionario Bribri',
+              'Diccionario Bribrí',
               style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w800),
             ),
             SizedBox(height: 5.0),
             Text(
-              'By DCJ',
+              'Por DCJ & JSR',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),
             )
           ],
@@ -68,7 +68,7 @@ class NavBar extends StatelessWidget {
           Navigator.pushNamed(context, 'maps_screen');
         },
         leading: const Icon(
-          Icons.maps_home_work_rounded,
+          Icons.map_sharp,
           color: Color.fromARGB(255, 35, 138, 151),
         ),
         title: const Text('Donde se ubican'),

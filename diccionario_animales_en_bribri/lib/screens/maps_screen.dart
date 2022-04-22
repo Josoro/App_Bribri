@@ -51,6 +51,13 @@ class MapSampleState extends State<MapSample> {
   int _typeNumber = 0;
   final Set<Marker> _markers = {};
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    marcadores();
+    super.initState();
+  }
+
   void marcadores() {
     _markers.add(const Marker(
       // This marker id can be anything that uniquely identifies each marker.
@@ -93,7 +100,7 @@ class MapSampleState extends State<MapSample> {
         child: NavBar(),
       ),
       appBar: AppBar(
-        title: const Text('Territorio Bribri'),
+        title: const Text('Territorio Bribrí'),
         centerTitle: true,
         elevation: 0,
         actions: [
@@ -115,9 +122,10 @@ class MapSampleState extends State<MapSample> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToTheLake,
-        label: const Text('Territorio Bribri!'),
+        label: const Text('Territorio Bribrí!'),
         icon: const Icon(Icons.camera_alt_outlined),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
@@ -149,7 +157,6 @@ class MapSampleState extends State<MapSample> {
           _type = MapType.normal;
           _typeNumber = 0;
       }
-      marcadores();
     });
   }
 }
