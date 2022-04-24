@@ -1,4 +1,4 @@
-package com.example.diccionario_animales_en_bribri
+package com.dcjjsr.animales_en_bribri
 
 import io.flutter.embedding.android.FlutterActivity
 

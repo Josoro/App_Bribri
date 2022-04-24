@@ -3,3 +3,4 @@ export 'package:diccionario_animales_en_bribri/screens/home_screen.dart';
 export 'package:diccionario_animales_en_bribri/screens/animal_cards_screen.dart';
 export 'package:diccionario_animales_en_bribri/screens/animal_information.dart';
 export 'package:diccionario_animales_en_bribri/screens/maps_screen.dart';
+export 'package:diccionario_animales_en_bribri/providers/load_firebase_provider.dart';

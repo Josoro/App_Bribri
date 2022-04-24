@@ -1,4 +1,5 @@
 //Pantalla de la informacion del animal
+import 'package:diccionario_animales_en_bribri/models/animal.dart';
 import 'package:flutter/material.dart';
 
 class AnimalInformationScreen extends StatelessWidget {
@@ -6,19 +7,19 @@ class AnimalInformationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final Animal animal = ModalRoute.of(context)!.settings.arguments as Animal;
+
+    return Scaffold(
         body: CustomScrollView(
       slivers: [
-        _CustomAppBar(),
+        _CustomAppBar(name: animal.name),
         SliverList(
             delegate: SliverChildListDelegate.fixed([
-          _PosterAndTitle(),
+          _PosterAndTitle(animal: animal),
           SizedBox(
             height: 10,
           ),
-          _Overview(
-              description:
-                  'Ex sit veniam officia id commodo aute deserunt cillum. Ex aliqua proident excepteur amet nisi ad mollit magna et aliquip consectetur. Qui consectetur nisi laborum anim Lorem cillum est qui minim id ut. Esse Lorem duis dolor tempor irure ullamco do non nulla ad exercitation. Et est commodo nostrud incididunt.'),
+          _Overview(description: animal.description),
         ]))
       ],
     ));
@@ -26,7 +27,8 @@ class AnimalInformationScreen extends StatelessWidget {
 }
 
 class _CustomAppBar extends StatelessWidget {
-  const _CustomAppBar({Key? key}) : super(key: key);
+  const _CustomAppBar({Key? key, required this.name}) : super(key: key);
+  final String name;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -42,8 +44,8 @@ class _CustomAppBar extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           color: Colors.black12,
           padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
-          child: const Text(
-            "tkabë̀",
+          child: Text(
+            name,
             style: TextStyle(fontSize: 16),
             textAlign: TextAlign.center,
           ),
@@ -54,8 +56,8 @@ class _CustomAppBar extends StatelessWidget {
 }
 
 class _PosterAndTitle extends StatelessWidget {
-  const _PosterAndTitle({Key? key}) : super(key: key);
-
+  const _PosterAndTitle({Key? key, required this.animal}) : super(key: key);
+  final Animal animal;
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
@@ -72,10 +74,9 @@ class _PosterAndTitle extends StatelessWidget {
             tag: '',
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: const FadeInImage(
+              child: FadeInImage(
                 placeholder: AssetImage('assets/no-image.jpg'),
-                image: NetworkImage(
-                    'https://firebasestorage.googleapis.com/v0/b/diccionario-animales-en-bribri.appspot.com/o/prueba.png?alt=media&token=142d5c3a-bf45-4a37-8a2e-e34c1f596ecc'),
+                image: NetworkImage(animal.fullImgUrl),
                 height: 150,
                 //width: 110,
               ),
@@ -92,7 +93,7 @@ class _PosterAndTitle extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Text('sulì tkabë - suli tchabë',
+                Text(animal.nameBribri,
                     style: textTheme.headline5,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2),

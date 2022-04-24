@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "767031039701",
+    "project_id": "diccionario-animales-en-bribri",
+    "storage_bucket": "diccionario-animales-en-bribri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767031039701:android:986c22029cd48c835ef45c",
+        "android_client_info": {
+          "package_name": "com.dcjjsr.animales_en_bribri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767031039701-hu2oj9o5d4glkt3bg142hfoq6icd83bm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-gNvQLVfdpJNIUtzugcSUCBrJtNTXbZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767031039701-hu2oj9o5d4glkt3bg142hfoq6icd83bm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
