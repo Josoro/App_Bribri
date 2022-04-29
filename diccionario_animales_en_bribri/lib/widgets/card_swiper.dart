@@ -15,20 +15,25 @@ class CardSwiper extends StatelessWidget {
       child: Swiper(
         itemCount: animals.length,
         layout: SwiperLayout.TINDER,
-        itemWidth: size.width * 0.8,
+        itemWidth: size.width * 1,
         itemHeight: size.height * 0.3,
         itemBuilder: (_, int index) {
           //El GestureDetector ayuda a navegar a otra pantalla, cuando se le da click.
           final animal = animals[index];
+          animal.animalId = 'swiper-${animal.id}';
+
           return GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'animal_information',
                 arguments: animal),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: FadeInImage(
-                  placeholder: AssetImage('assets/no-image.jpg'),
-                  image: NetworkImage(animals[index].fullImgUrl),
-                  fit: BoxFit.cover),
+            child: Hero(
+              tag: animal.animalId!,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: FadeInImage(
+                    placeholder: AssetImage('assets/no-image.jpg'),
+                    image: NetworkImage(animals[index].fullImgUrl),
+                    fit: BoxFit.fill),
+              ),
             ),
           );
         },

@@ -15,6 +15,7 @@ class Animal {
   String description;
   int category;
   String token;
+  String? animalId;
 
   get fullImgUrl {
     if (name != null) {

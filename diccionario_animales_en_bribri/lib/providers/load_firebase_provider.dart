@@ -22,16 +22,12 @@ class LoadFirebaseData extends ChangeNotifier {
   }
 
   getListAnimals() async {
-    print('ENTRO');
     FirebaseFirestore firestore =
         FirebaseFirestore.instanceFor(app: FirebaseFirestore.instance.app);
     CollectionReference collectionReference = firestore.collection('Animales');
     QuerySnapshot animales = await collectionReference.get();
     if (animales.docs.isNotEmpty) {
-      print('ENTRO1');
       for (var doc in animales.docs) {
-        print('ENTRO2');
-        print(doc);
         onDisplayAnimals.add(Animal(
             id: doc['id'],
             name: doc['name'],
@@ -42,7 +38,5 @@ class LoadFirebaseData extends ChangeNotifier {
       }
       notifyListeners();
     }
-    print('ENTRO3');
-    print(onDisplayAnimals);
   }
 }

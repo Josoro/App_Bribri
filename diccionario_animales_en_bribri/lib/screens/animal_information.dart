@@ -16,7 +16,7 @@ class AnimalInformationScreen extends StatelessWidget {
         SliverList(
             delegate: SliverChildListDelegate.fixed([
           _PosterAndTitle(animal: animal),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           _Overview(description: animal.description),
@@ -32,7 +32,7 @@ class _CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Colors.indigo,
+      backgroundColor: Color.fromARGB(255, 35, 138, 151),
       expandedHeight: 60,
       floating: false,
       pinned: true,
@@ -71,7 +71,7 @@ class _PosterAndTitle extends StatelessWidget {
       child: Column(
         children: [
           Hero(
-            tag: '',
+            tag: animal.animalId!,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: FadeInImage(

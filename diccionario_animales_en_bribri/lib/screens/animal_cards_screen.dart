@@ -34,7 +34,7 @@ class AnimalCardsScreen extends StatelessWidget {
             //Tarjetas principales de los animales
             CardSwiper(animals: animalsProvider.onDisplayAnimals),
             //Listado horizontal de los animales.
-            AnimalSlider()
+            AnimalSlider(animals: animalsProvider.onDisplayAnimals)
           ]),
         ));
   }
