@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../models/animal.dart';
+import '../providers/load_firebase_provider.dart';
 
 class AnimalSlider extends StatelessWidget {
-  const AnimalSlider({Key? key, required this.animals}) : super(key: key);
-  final List<Animal> animals;
+  const AnimalSlider({Key? key, required this.title, required this.category})
+      : super(key: key);
+  final String title;
+  final int category;
 
   @override
   Widget build(BuildContext context) {
+    final animalsProvider = Provider.of<LoadFirebaseData>(context);
+    final List<Animal> animals;
+
+    animals = animalsProvider.getAnimalsByCategory(category);
     return SizedBox(
       width: double.infinity,
       height: 260,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text('Animales',
+            child: Text(title,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           ),
           const SizedBox(height: 5),
