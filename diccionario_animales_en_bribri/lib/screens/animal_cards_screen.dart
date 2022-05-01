@@ -38,12 +38,19 @@ class AnimalCardsScreen extends StatelessWidget {
             //Listado horizontal de los animales.
             AnimalSlider(
               category: 1,
-              title: 'Felinos',
+              title: 'Felinos / na̱mù̱',
             ),
-
             AnimalSlider(
               category: 2,
-              title: 'Peces',
+              title: 'Serpientes / (tchabë )',
+            ),
+            AnimalSlider(
+              category: 2,
+              title: 'Peces / (namà)',
+            ),
+            AnimalSlider(
+              category: 2,
+              title: 'Aves / (dù)',
             )
           ]),
         ));
