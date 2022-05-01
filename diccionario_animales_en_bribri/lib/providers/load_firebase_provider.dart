@@ -10,6 +10,8 @@ class LoadFirebaseData extends ChangeNotifier {
       bucket: 'gs://diccionario-animales-en-bribri.appspot.com');
 
   List<Animal> onDisplayAnimals = [];
+  List<Animal> animalsCategory = [];
+  List<Animal> animalsSearch = [];
 
   LoadFirebaseData() {
     print('Animals Provider inicializado');
@@ -35,6 +37,48 @@ class LoadFirebaseData extends ChangeNotifier {
             description: doc['description'],
             category: doc['category'],
             token: doc['token']));
+      }
+      notifyListeners();
+    }
+  }
+
+  getAnimalsByCategory(int cateroryNum) async {
+    FirebaseFirestore firestore =
+        FirebaseFirestore.instanceFor(app: FirebaseFirestore.instance.app);
+    CollectionReference collectionReference = firestore.collection('Animales');
+    QuerySnapshot animales = await collectionReference.get();
+    if (animales.docs.isNotEmpty) {
+      for (var doc in animales.docs) {
+        if (doc['category'] == cateroryNum) {
+          animalsCategory.add(Animal(
+              id: doc['id'],
+              name: doc['name'],
+              nameBribri: doc['nameBribri'],
+              description: doc['description'],
+              category: doc['category'],
+              token: doc['token']));
+        }
+      }
+      notifyListeners();
+    }
+  }
+
+  getAnimalsSearch(String palabra) async {
+    FirebaseFirestore firestore =
+        FirebaseFirestore.instanceFor(app: FirebaseFirestore.instance.app);
+    CollectionReference collectionReference = firestore.collection('Animales');
+    QuerySnapshot animales = await collectionReference.get();
+    if (animales.docs.isNotEmpty) {
+      for (var doc in animales.docs) {
+        if (doc['name'].toString().contains(palabra)) {
+          animalsSearch.add(Animal(
+              id: doc['id'],
+              name: doc['name'],
+              nameBribri: doc['nameBribri'],
+              description: doc['description'],
+              category: doc['category'],
+              token: doc['token']));
+        }
       }
       notifyListeners();
     }

@@ -14,6 +14,8 @@ class AnimalCardsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final animalsProvider = Provider.of<LoadFirebaseData>(context);
 
+    animalsProvider.getAnimalsByCategory(1);
+
     return Scaffold(
         drawer: const Drawer(
           child: NavBar(),
@@ -36,7 +38,15 @@ class AnimalCardsScreen extends StatelessWidget {
             //Tarjetas principales de los animales
             CardSwiper(animals: animalsProvider.onDisplayAnimals),
             //Listado horizontal de los animales.
-            AnimalSlider(animals: animalsProvider.onDisplayAnimals)
+            AnimalSlider(
+              category: 1,
+              title: 'Felinos',
+            ),
+
+            AnimalSlider(
+              category: 2,
+              title: 'Peces',
+            )
           ]),
         ));
   }
