@@ -46,7 +46,7 @@ class _CustomAppBar extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
           child: Text(
             name,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
             textAlign: TextAlign.center,
           ),
         ),
@@ -75,7 +75,7 @@ class _PosterAndTitle extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: FadeInImage(
-                placeholder: AssetImage('assets/no-image.jpg'),
+                placeholder: const AssetImage('assets/no-image.jpg'),
                 image: NetworkImage(animal.fullImgUrl),
                 height: 150,
                 //width: 110,
