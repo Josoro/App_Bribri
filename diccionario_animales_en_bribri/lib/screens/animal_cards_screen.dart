@@ -19,7 +19,9 @@ class AnimalCardsScreen extends StatelessWidget {
           child: NavBar(),
         ),
         appBar: AppBar(
-          title: const Text('Animales en Bribrí'),
+          backgroundColor: Colors.indigo,
+          title: const Text('Animales en Bribrí',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           centerTitle: true,
           elevation: 0,
           actions: [
